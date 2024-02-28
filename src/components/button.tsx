@@ -1,6 +1,6 @@
 import '../styles/button.css';
 export interface ButtonProps {
-  onClick?: () => {};
+  onClick?: () => void;
   text?: string;
   variant?: 'primary' | 'secondary' | 'close' | 'submit';
 }
