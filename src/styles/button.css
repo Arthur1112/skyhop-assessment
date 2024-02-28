@@ -1,0 +1,42 @@
+button {
+  --btn-border-radius: 10px;
+  --btn-padding: 15px 60px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.primaryContainer {
+  padding: var(--btn-padding);
+  border-radius: var(--btn-border-radius);
+  border: solid 3px var(--brand-blue);
+  background: var(--brand-blue);
+  color: white;
+}
+.primaryContainer:hover {
+  border: solid 3px var(--brand-blue);
+  background: transparent;
+  color: var(--brand-blue);
+}
+.secondaryContainer {
+  padding: var(--btn-padding);
+  border-radius: var(--btn-border-radius);
+  border: solid 3px var(--brand-orange);
+  background: transparent;
+  color: var(--brand-orange);
+}
+.secondaryContainer:hover {
+  background: var(--brand-orange);
+  color: white;
+}
+.closeContainer:hover {
+  border: solid 3px var(--brand-red);
+  background: transparent;
+  color: var(--brand-red);
+}
+.submitContainer:hover {
+  border: solid 3px var(--brand-green);
+  background: transparent;
+  color: var(--brand-green);
+}

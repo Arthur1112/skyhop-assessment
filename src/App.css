@@ -1,3 +1,9 @@
+:root {
+  --brand-blue: rgb(37, 61, 107);
+  --brand-orange: rgb(247, 167, 61);
+  --brand-green: rgb(75, 171, 137);
+  --brand-red: rgb(244, 67, 54);
+}
 .App {
   text-align: center;
 }
