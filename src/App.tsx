@@ -1,5 +1,6 @@
 import './App.css';
 import Button from './components/button';
+import DropDownSelect from './components/dropDownSelect';
 import RadioBtnGroup from './components/radioBtnGroup';
 import ToggleSwitch from './components/toggleSwitch';
 
@@ -16,6 +17,20 @@ function App() {
         data={[
           { label: 'yes', id: 'yes' },
           { label: 'no', id: 'no' },
+        ]}
+      />
+      <DropDownSelect
+        onSelect={(e) => console.log(e)}
+        data={[
+          {
+            option: 'Option 1',
+          },
+          {
+            option: 'Option 2',
+          },
+          {
+            option: 'Option 3',
+          },
         ]}
       />
     </div>
