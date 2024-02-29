@@ -1,6 +1,6 @@
 button {
   --btn-border-radius: 10px;
-  --btn-padding: 15px 60px;
+  --btn-padding: 10px 50px;
 }
 
 button:hover {
@@ -28,6 +28,12 @@ button:hover {
 }
 .secondaryContainer:hover {
   background: var(--brand-orange);
+  color: white;
+}
+.closeContainer {
+  border-radius: 5px;
+  border: solid 3px var(--brand-blue);
+  background: var(--brand-blue);
   color: white;
 }
 .closeContainer:hover {

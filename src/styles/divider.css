@@ -1,0 +1,19 @@
+.divider {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  border-color: var(--brand-blue);
+}
+.blue {
+  border-color: var(--brnad-blue);
+}
+.gray {
+  border-color: var(--brand-light-gray);
+}
+.vertical {
+  transform: rotate(90deg);
+}
+
+.divider-half {
+  width: 50%;
+}
