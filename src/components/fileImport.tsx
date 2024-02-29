@@ -1,4 +1,3 @@
-// @ts-nocheck
 import '../styles/fileImport.css';
 import { useRef, useState } from 'react';
 import Button from './button';
@@ -8,10 +7,22 @@ export interface FileImportProps {
   onFileChange?: (files: any) => void;
 }
 
-const FileImport = ({ onFileChange }: FileImportProps) => {
-  const wrapperRef = useRef(null);
+interface FileListProps {
+  name: 'string';
+  size: number;
+}
 
-  const [fileList, setFileList] = useState([]);
+const FileImport = ({ onFileChange }: FileImportProps) => {
+  const wrapperRef = useRef(document.createElement('div'));
+
+  const _FileImport = (files: any) => {
+    if (onFileChange) {
+      return onFileChange;
+    } else console.log('No Files');
+  };
+
+  console.log('=============>', wrapperRef);
+  const [fileList, setFileList] = useState<Array<FileListProps>>([]);
 
   const onDragEnter = () => wrapperRef.current.classList.add('dragover');
 
@@ -24,7 +35,7 @@ const FileImport = ({ onFileChange }: FileImportProps) => {
     if (newFile) {
       const updatedList = [...fileList, newFile];
       setFileList(updatedList);
-      onFileChange(updatedList);
+      _FileImport(updatedList);
     }
   };
 
@@ -32,8 +43,9 @@ const FileImport = ({ onFileChange }: FileImportProps) => {
     const updatedList = [...fileList];
     updatedList.splice(fileList.indexOf(file), 1);
     setFileList(updatedList);
-    onFileChange(updatedList);
+    _FileImport(updatedList);
   };
+
   return (
     <div className="drop-file-main-wrapper">
       <div
@@ -52,7 +64,7 @@ const FileImport = ({ onFileChange }: FileImportProps) => {
         <input type="file" value="" onChange={onFileDrop} />
       </div>
       <Button text="Upload Manifest" />
-      {fileList.length > 0 ? (
+      {fileList && fileList.length > 0 ? (
         <div className="drop-file-preview">
           {fileList.map((item, index) => (
             <div key={index} className="drop-file-preview__item">
