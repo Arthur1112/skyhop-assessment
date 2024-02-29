@@ -89,7 +89,10 @@ const Modal = ({ onSubmit }: ModalProps) => {
                 <div className="right-column">
                   <div className="schedule-split-wrapper">
                     <p>Split schedule using social distancing?</p>
-                    <RadioBtnGroup data={sampleScheduleBtns} />
+                    <RadioBtnGroup
+                      id="sampleScheduleBtns"
+                      data={sampleScheduleBtns}
+                    />
                     <Divider kind="half" />
                   </div>
                   <div className="elapse-dates-wrapper">
@@ -101,7 +104,10 @@ const Modal = ({ onSubmit }: ModalProps) => {
                     <p>
                       <strong>Client:</strong>
                     </p>
-                    <RadioBtnGroup data={sampleClientBtns} />
+                    <RadioBtnGroup
+                      id="sampleClientBtns"
+                      data={sampleClientBtns}
+                    />
                   </div>
                   <div className="testing-centers-wrapper">
                     <div className="single-testing-center">

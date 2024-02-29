@@ -4,9 +4,10 @@ import '../styles/radioBtnGroup.css';
 export interface RadioBtnGroupProps {
   data?: Array<{ label: string; id: string }>;
   onChange?: (value: string) => void;
+  id?: string;
 }
 
-const RadioBtnGroup = ({ data, onChange }: RadioBtnGroupProps) => {
+const RadioBtnGroup = ({ data, onChange, id }: RadioBtnGroupProps) => {
   const [radioBtnValue, setRadioBtnValue] = useState('');
 
   const _onChange = (value: string) => {
@@ -25,7 +26,7 @@ const RadioBtnGroup = ({ data, onChange }: RadioBtnGroupProps) => {
               <input
                 onChange={(e) => _onChange(item.id)}
                 id={item.id}
-                name="radio"
+                name={id}
                 type="radio"
                 checked={item.id === radioBtnValue}
               />
